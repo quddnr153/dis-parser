@@ -27,20 +27,9 @@ public class ReceiverController {
 
         log.info("Get receiveSentence. sentence = {}", clientSentence);
 
-        if (clientSentence.toLowerCase().equals("jarvis")) {
-            ProcessBuilder pb = new ProcessBuilder("python", "~/Documents/git-projects/dis-tts/hello-jarvis.py");
-            pb.start();
-
-            log.info("Say hello");
-            Process process = Runtime.getRuntime().exec("python ~/Documents/git-projects/dis-tts/hello-jarvis.py");
+        if (clientSentence.toLowerCase().contains("jarvis")) {
+            Process process = Runtime.getRuntime().exec("python /home/quddnr153/Documents/git-projects/dis-tts/hello-jarvis.py");
             process.waitFor();
-
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-
-            String line;
-            while ((line = reader.readLine())!= null) {
-                log.info(line);
-            }
         }
 
         Sentence sentence = new Sentence();
