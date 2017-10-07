@@ -28,6 +28,7 @@ public class ReceiverController {
         log.info("Get receiveSentence. sentence = {}", clientSentence);
 
         if (clientSentence.toLowerCase().equals("jarvis")) {
+            log.info("Say hello");
             Process process = Runtime.getRuntime().exec("python ~/Document/git-projects/dis-tts/hello-jarvis.py");
             process.waitFor();
 
