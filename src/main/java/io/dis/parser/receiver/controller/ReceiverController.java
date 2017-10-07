@@ -29,7 +29,7 @@ public class ReceiverController {
 
         if (clientSentence.toLowerCase().equals("jarvis")) {
             log.info("Say hello");
-            Process process = Runtime.getRuntime().exec("python ~/Document/git-projects/dis-tts/hello-jarvis.py");
+            Process process = Runtime.getRuntime().exec("python ~/Documents/git-projects/dis-tts/hello-jarvis.py");
             process.waitFor();
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
